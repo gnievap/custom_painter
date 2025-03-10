@@ -1,3 +1,2 @@
 # custom_painter
-
-A new Flutter project.
+Uso de custom painter en Flutter
