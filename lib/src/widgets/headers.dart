@@ -52,16 +52,15 @@ class _HeaderDiagonalPainter extends CustomPainter {
     final lapiz = Paint();
     // Propiedades
     lapiz.color = Color(0xff615AAB);
-    lapiz.style = PaintingStyle.stroke; // .fill .stroke
-    lapiz.strokeWidth = 20;
+    lapiz.style = PaintingStyle.fill; // .fill .stroke
+    lapiz.strokeWidth = 2;
 
-    final path = new Path();
+    final path =  Path();
     // Dibujar con el path y el lapiz
-    path.moveTo(0, size.height * 0.5);
-    path.lineTo(size.width, size.height * 0.5);
+    path.moveTo(0, size.height * 0.35);
+    path.lineTo(size.width, size.height * 0.30);
     path.lineTo(size.width, 0);
     path.lineTo(0, 0);
-    path.lineTo(0, size.height * 0.5);
     canvas.drawPath(path, lapiz);
   }
 
