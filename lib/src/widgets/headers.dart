@@ -35,13 +35,29 @@ class HeaderDiagonal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      height: double.infinity,
-      width: double.infinity,
-      //color: Color(0xff615AAB),
-      child: CustomPaint(
-        painter: _HeaderDiagonalPainter(),
+    return  Stack(
+      children: [
+        SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        //color: Color(0xff615AAB),
+        child: CustomPaint(
+          painter: _HeaderDiagonalPainter(),
+        ),
       ),
+      Positioned(
+        top: 50,
+        left: 20,
+        child: Text(
+          'Header Diagonal',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      ],
     );
   }
 }
