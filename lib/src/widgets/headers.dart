@@ -83,3 +83,57 @@ class _HeaderDiagonalPainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
+
+class HeaderTriangular extends StatelessWidget {
+  const HeaderTriangular({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Stack(
+      children: [
+        SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        //color: Color(0xff615AAB),
+        child: CustomPaint(
+          painter: _HeaderTriangularPainter(),
+        ),
+      ),
+      Positioned(
+        top: 70,
+        left: 60,
+        child: Text(
+          'Header Triangular',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      ],
+    );
+  }
+}
+
+class _HeaderTriangularPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final lapiz = Paint();
+    // Propiedades
+    lapiz.color = Color(0xff615AAB);
+    lapiz.style = PaintingStyle.fill; // .fill .stroke
+    lapiz.strokeWidth = 2;
+
+    final path =  Path();
+    // Dibujar con el path y el lapiz
+    path.moveTo(0, 0);
+    path.lineTo(size.width, size.height );
+    path.lineTo(size.width, 0);
+    path.lineTo(0, 0);
+    canvas.drawPath(path, lapiz);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
+}
