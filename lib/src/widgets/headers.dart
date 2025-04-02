@@ -138,3 +138,58 @@ class _HeaderTriangularPainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
+
+class HeaderPico extends StatelessWidget {
+  const HeaderPico({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Stack(
+      children: [
+        SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        //color: Color(0xff615AAB),
+        child: CustomPaint(
+          painter: _HeaderPicoPainter(),
+        ),
+      ),
+      Positioned(
+        top: 70,
+        left: 20,
+        child: Text(
+          'Header Pico',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      ],
+    );
+  }
+}
+
+class _HeaderPicoPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final lapiz = Paint();
+    // Propiedades
+    lapiz.color = Color(0xff615AAB);
+    lapiz.style = PaintingStyle.fill; // .fill .stroke
+    lapiz.strokeWidth = 20;
+
+    final path =  Path();
+    // Dibujar con el path y el lapiz
+    path.lineTo(0, size.height * 0.25 );
+    path.lineTo(size.width * 0.50, size.height * 0.30);
+    path.lineTo(size.width, size.height * 0.25);
+    path.lineTo(size.width, 0);
+    // path.lineTo(0, 0);
+    canvas.drawPath(path, lapiz);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
+}
