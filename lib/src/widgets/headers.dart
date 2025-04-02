@@ -100,8 +100,8 @@ class HeaderTriangular extends StatelessWidget {
         ),
       ),
       Positioned(
-        top: 70,
-        left: 60,
+        top: 700,
+        left: 10,
         child: Text(
           'Header Triangular',
           style: TextStyle(
@@ -129,8 +129,9 @@ class _HeaderTriangularPainter extends CustomPainter {
     // Dibujar con el path y el lapiz
     path.moveTo(0, 0);
     path.lineTo(size.width, size.height );
-    path.lineTo(size.width, 0);
-    path.lineTo(0, 0);
+    path.lineTo(0, size.height );
+    // path.lineTo(-size.width, 0);
+    // path.lineTo(0, 0);
     canvas.drawPath(path, lapiz);
   }
 
